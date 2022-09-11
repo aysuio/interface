@@ -19,6 +19,8 @@ export enum SupportedChainId {
 
   CELO = 42220,
   CELO_ALFAJORES = 44787,
+
+  ETHPOW = 10002 // test
 }
 
 export const CHAIN_IDS_TO_NAMES = {
