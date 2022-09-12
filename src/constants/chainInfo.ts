@@ -54,16 +54,16 @@ export type ChainInfoMap = { readonly [chainId: number]: L1ChainInfo | L2ChainIn
 } & { readonly [chainId in SupportedL1ChainId]: L1ChainInfo }
 
 const CHAIN_INFO: ChainInfoMap = {
-  [SupportedChainId.MAINNET]: {
-    networkType: NetworkType.L1,
-    docs: 'https://docs.uniswap.org/',
-    explorer: 'https://etherscan.io/',
-    infoLink: 'https://info.uniswap.org/#/',
-    label: 'Ethereum',
-    logoUrl: ethereumLogoUrl,
-    nativeCurrency: { name: 'Ether', symbol: 'ETH', decimals: 18 },
-    color: colorsDark.chain_1,
-  },
+  // [SupportedChainId.MAINNET]: {
+  //   networkType: NetworkType.L1,
+  //   docs: 'https://docs.uniswap.org/',
+  //   explorer: 'https://etherscan.io/',
+  //   infoLink: 'https://info.uniswap.org/#/',
+  //   label: 'Ethereum',
+  //   logoUrl: ethereumLogoUrl,
+  //   nativeCurrency: { name: 'Ether', symbol: 'ETH', decimals: 18 },
+  //   color: colorsDark.chain_1,
+  // },
   // [SupportedChainId.RINKEBY]: {
   //   networkType: NetworkType.L1,
   //   docs: 'https://docs.uniswap.org/',
@@ -260,7 +260,7 @@ export function getChainInfo(chainId: any): any {
   return undefined
 }
 
-export const MAINNET_INFO = CHAIN_INFO[SupportedChainId.MAINNET]
+export const MAINNET_INFO = CHAIN_INFO[SupportedChainId.ETHPOW]
 export function getChainInfoOrDefault(chainId: number | undefined) {
   return getChainInfo(chainId) ?? MAINNET_INFO
 }

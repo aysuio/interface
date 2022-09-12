@@ -46,7 +46,7 @@ interface UseTokenDetailPageQueryResult {
 
 const FAKE_TOKEN_DETAIL_PAGE_QUERY_RESULT: TokenDetailPageQueryResult = {
   priceHistory: {
-    [SupportedChainId.MAINNET]: [
+    [SupportedChainId.ETHPOW]: [
       {
         id: 'string',
         currency: Currency.USD,

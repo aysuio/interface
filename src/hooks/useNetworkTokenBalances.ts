@@ -1,3 +1,4 @@
+/* eslint-disable */
 import { CurrencyAmount, Token } from '@uniswap/sdk-core'
 import { SupportedChainId } from 'constants/chains'
 import { gql } from 'graphql-request'
@@ -29,8 +30,8 @@ export function useNetworkTokenBalances({ address }: useNetworkTokenBalancesArgs
           new Token(SupportedChainId.ARBITRUM_ONE, address, 18),
           10e18
         ),
-        [SupportedChainId.MAINNET]: CurrencyAmount.fromRawAmount(
-          new Token(SupportedChainId.MAINNET, address, 18),
+        [SupportedChainId.ETHPOW]: CurrencyAmount.fromRawAmount(
+          new Token(SupportedChainId.ETHPOW, address, 18),
           1e18
         ),
         [SupportedChainId.ETHPOW_TEST_RINKEBY]: CurrencyAmount.fromRawAmount(

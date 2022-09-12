@@ -55,6 +55,7 @@ export const TransactionSummary = ({ transactionDetails }: { transactionDetails:
   const transactionState = useMemo(() => {
     const pending = !receipt
     const success = !pending && tx && (receipt?.status === 1 || typeof receipt?.status === 'undefined')
+    /* eslint-disable */
     const transactionState = pending
       ? TransactionState.Pending
       : success

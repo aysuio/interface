@@ -6,7 +6,7 @@ import type { Chain, TokenDetailQuery as TokenDetailQueryType } from './__genera
 
 export function chainIdToChainName(networkId: SupportedChainId): Chain {
   switch (networkId) {
-    case SupportedChainId.MAINNET:
+    case SupportedChainId.ETHPOW:
       return 'ETHEREUM'
     case SupportedChainId.ARBITRUM_ONE:
       return 'ARBITRUM'

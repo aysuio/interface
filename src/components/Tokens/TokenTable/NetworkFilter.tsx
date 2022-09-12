@@ -12,7 +12,7 @@ import { MEDIUM_MEDIA_BREAKPOINT } from '../constants'
 import { filterNetworkAtom } from '../state'
 
 const NETWORKS = [
-  SupportedChainId.MAINNET,
+  SupportedChainId.ETHPOW,
   SupportedChainId.ARBITRUM_ONE,
   SupportedChainId.POLYGON,
   SupportedChainId.OPTIMISM,
