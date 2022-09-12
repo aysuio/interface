@@ -14,7 +14,7 @@ export const MAINNET_PROVIDER = new JsonRpcProvider(`https://mainnet.infura.io/v
  */
 export const RPC_URLS: { [key in SupportedChainId]: string } = {
   [SupportedChainId.MAINNET]: `https://mainnet.infura.io/v3/${INFURA_KEY}`,
-  [SupportedChainId.RINKEBY]: `https://rinkeby.infura.io/v3/${INFURA_KEY}`,
+  // [SupportedChainId.RINKEBY]: `https://rinkeby.infura.io/v3/${INFURA_KEY}`,
   [SupportedChainId.ROPSTEN]: `https://ropsten.infura.io/v3/${INFURA_KEY}`,
   [SupportedChainId.GOERLI]: `https://goerli.infura.io/v3/${INFURA_KEY}`,
   [SupportedChainId.KOVAN]: `https://kovan.infura.io/v3/${INFURA_KEY}`,
@@ -26,4 +26,6 @@ export const RPC_URLS: { [key in SupportedChainId]: string } = {
   [SupportedChainId.POLYGON_MUMBAI]: `https://polygon-mumbai.infura.io/v3/${INFURA_KEY}`,
   [SupportedChainId.CELO]: `https://forno.celo.org`,
   [SupportedChainId.CELO_ALFAJORES]: `https://alfajores-forno.celo-testnet.org`,
+  [SupportedChainId.ETHPOW]: `https://polygon-mainnet.infura.io/v3/${INFURA_KEY}`, // !CHANGE TO ETHPOW URL
+  [SupportedChainId.ETHPOW_TEST_RINKEBY]: `https://rinkeby.infura.io/v3/${INFURA_KEY}`, // https://iceberg.ethereumpow.org
 }

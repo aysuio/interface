@@ -7,11 +7,12 @@ import { RPC_URLS } from 'constants/networks'
 function getRpcUrls(chainId: SupportedChainId): [string] {
   switch (chainId) {
     case SupportedChainId.MAINNET:
-    case SupportedChainId.RINKEBY:
     case SupportedChainId.ROPSTEN:
     case SupportedChainId.KOVAN:
     case SupportedChainId.GOERLI:
+    case SupportedChainId.ETHPOW:
       return [RPC_URLS[chainId]]
+    case SupportedChainId.ETHPOW_TEST_RINKEBY:
     case SupportedChainId.OPTIMISM:
       return ['https://mainnet.optimism.io']
     case SupportedChainId.OPTIMISTIC_KOVAN:

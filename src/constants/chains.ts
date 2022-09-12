@@ -4,7 +4,7 @@
 export enum SupportedChainId {
   MAINNET = 1,
   ROPSTEN = 3,
-  RINKEBY = 4,
+  // RINKEBY = 4,
   GOERLI = 5,
   KOVAN = 42,
 
@@ -20,13 +20,14 @@ export enum SupportedChainId {
   CELO = 42220,
   CELO_ALFAJORES = 44787,
 
-  ETHPOW = 10002 // test
+  ETHPOW = 10001,
+  ETHPOW_TEST_RINKEBY = 4, // test
 }
 
 export const CHAIN_IDS_TO_NAMES = {
   [SupportedChainId.MAINNET]: 'mainnet',
   [SupportedChainId.ROPSTEN]: 'ropsten',
-  [SupportedChainId.RINKEBY]: 'rinkeby',
+  // [SupportedChainId.RINKEBY]: 'rinkeby',
   [SupportedChainId.GOERLI]: 'goerli',
   [SupportedChainId.KOVAN]: 'kovan',
   [SupportedChainId.POLYGON]: 'polygon',
@@ -37,6 +38,8 @@ export const CHAIN_IDS_TO_NAMES = {
   [SupportedChainId.ARBITRUM_RINKEBY]: 'arbitrum_rinkeby',
   [SupportedChainId.OPTIMISM]: 'optimism',
   [SupportedChainId.OPTIMISTIC_KOVAN]: 'optimistic_kovan',
+  [SupportedChainId.ETHPOW]: 'eth_pow',
+  [SupportedChainId.ETHPOW_TEST_RINKEBY]: 'ethpow_test_rinkeby',
 }
 
 /**
@@ -69,12 +72,13 @@ export const UNSUPPORTED_V2POOL_CHAIN_IDS = [
 
 export const TESTNET_CHAIN_IDS = [
   SupportedChainId.ROPSTEN,
-  SupportedChainId.RINKEBY,
+  // SupportedChainId.RINKEBY,
   SupportedChainId.GOERLI,
   SupportedChainId.KOVAN,
   SupportedChainId.POLYGON_MUMBAI,
   SupportedChainId.ARBITRUM_RINKEBY,
   SupportedChainId.OPTIMISTIC_KOVAN,
+  SupportedChainId.ETHPOW_TEST_RINKEBY,
 ] as const
 
 export type SupportedTestnetChainId = typeof TESTNET_CHAIN_IDS[number]
@@ -85,13 +89,15 @@ export type SupportedTestnetChainId = typeof TESTNET_CHAIN_IDS[number]
 export const L1_CHAIN_IDS = [
   SupportedChainId.MAINNET,
   SupportedChainId.ROPSTEN,
-  SupportedChainId.RINKEBY,
+  // SupportedChainId.RINKEBY,
   SupportedChainId.GOERLI,
   SupportedChainId.KOVAN,
   SupportedChainId.POLYGON,
   SupportedChainId.POLYGON_MUMBAI,
   SupportedChainId.CELO,
   SupportedChainId.CELO_ALFAJORES,
+  SupportedChainId.ETHPOW,
+  SupportedChainId.ETHPOW_TEST_RINKEBY,
 ] as const
 
 export type SupportedL1ChainId = typeof L1_CHAIN_IDS[number]
