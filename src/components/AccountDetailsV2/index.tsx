@@ -1,3 +1,4 @@
+/* eslint-disable */
 import { useWeb3React } from '@web3-react/core'
 import { getChainInfoOrDefault } from 'constants/chainInfo'
 import { SupportedChainId } from 'constants/chains'
