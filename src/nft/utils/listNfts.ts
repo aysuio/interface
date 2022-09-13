@@ -162,72 +162,72 @@ export async function signListing(
         else setStatus(ListingStatus.FAILED)
         return false
       }
-    case 'LooksRare':
-      const addresses = addressesByNetwork[SupportedChainId.MAINNET]
-      const currentTime = Math.round(Date.now() / 1000)
-      const makerOrder: MakerOrder = {
-        // true --> ask / false --> bid
-        isOrderAsk: true,
-        // signer address of the maker order
-        signer: signerAddress,
-        // collection address
-        collection: asset.asset_contract.address,
-        // Price in WEI
-        price: parseEther(listingPrice.toString()),
-        // Token ID
-        tokenId: BigNumber.from(asset.tokenId),
-        // amount of tokens to sell/purchase (must be 1 for ERC721, 1+ for ERC1155)
-        amount: BigNumber.from(1),
-        // strategy for trade execution (e.g., DutchAuction, StandardSaleForFixedPrice), see addresses in the SDK
-        strategy: addresses.STRATEGY_STANDARD_SALE,
-        // currency address
-        currency: addresses.WETH,
-        // order nonce (must be unique unless new maker order is meant to override existing one e.g., lower ask price)
-        nonce: BigNumber.from(looksRareNonce),
-        // startTime timestamp in seconds
-        startTime: BigNumber.from(currentTime),
-        // endTime timestamp in seconds
-        endTime: BigNumber.from(asset.expirationTime),
-        // minimum ratio to be received by the user (per 10000)
-        minPercentageToAsk: BigNumber.from(10000)
-          .sub(BigNumber.from(200).add(BigNumber.from(asset.creatorPercentage * 10000)))
-          .toNumber(),
-        // params (e.g., price, target account for private sale)
-        params: [],
-      }
+    // case 'LooksRare':
+    //   const addresses = addressesByNetwork[SupportedChainId.MAINNET]
+    //   const currentTime = Math.round(Date.now() / 1000)
+    //   const makerOrder: MakerOrder = {
+    //     // true --> ask / false --> bid
+    //     isOrderAsk: true,
+    //     // signer address of the maker order
+    //     signer: signerAddress,
+    //     // collection address
+    //     collection: asset.asset_contract.address,
+    //     // Price in WEI
+    //     price: parseEther(listingPrice.toString()),
+    //     // Token ID
+    //     tokenId: BigNumber.from(asset.tokenId),
+    //     // amount of tokens to sell/purchase (must be 1 for ERC721, 1+ for ERC1155)
+    //     amount: BigNumber.from(1),
+    //     // strategy for trade execution (e.g., DutchAuction, StandardSaleForFixedPrice), see addresses in the SDK
+    //     strategy: addresses.STRATEGY_STANDARD_SALE,
+    //     // currency address
+    //     currency: addresses.WETH,
+    //     // order nonce (must be unique unless new maker order is meant to override existing one e.g., lower ask price)
+    //     nonce: BigNumber.from(looksRareNonce),
+    //     // startTime timestamp in seconds
+    //     startTime: BigNumber.from(currentTime),
+    //     // endTime timestamp in seconds
+    //     endTime: BigNumber.from(asset.expirationTime),
+    //     // minimum ratio to be received by the user (per 10000)
+    //     minPercentageToAsk: BigNumber.from(10000)
+    //       .sub(BigNumber.from(200).add(BigNumber.from(asset.creatorPercentage * 10000)))
+    //       .toNumber(),
+    //     // params (e.g., price, target account for private sale)
+    //     params: [],
+    //   }
 
-      try {
-        const signatureHash = await signMakerOrder(
-          signer,
-          SupportedChainId.MAINNET,
-          makerOrder,
-          process.env.REACT_APP_LOOKSRARE_MARKETPLACE_CONTRACT || ''
-        )
-        setStatus(ListingStatus.PENDING)
-        const payload = {
-          signature: signatureHash,
-          tokenId: asset.tokenId,
-          collection: asset.asset_contract.address,
-          strategy: addresses.STRATEGY_STANDARD_SALE,
-          currency: addresses.WETH,
-          signer: signerAddress,
-          isOrderAsk: true,
-          nonce: looksRareNonce,
-          amount: 1,
-          price: parseEther(listingPrice.toString()).toString(),
-          startTime: currentTime,
-          endTime: asset.expirationTime,
-          minPercentageToAsk: 10000 - (200 + asset.creatorPercentage * 10000),
-          params: [],
-        }
-        const res = await createLooksRareOrder(payload)
-        if (res) setStatus(ListingStatus.APPROVED)
-        return res
-      } catch (error) {
-        if (error.code === 4001) setStatus(ListingStatus.REJECTED)
-        else setStatus(ListingStatus.FAILED)
-        return false
-      }
+    //   try {
+    //     const signatureHash = await signMakerOrder(
+    //       signer,
+    //       SupportedChainId.MAINNET,
+    //       makerOrder,
+    //       process.env.REACT_APP_LOOKSRARE_MARKETPLACE_CONTRACT || ''
+    //     )
+    //     setStatus(ListingStatus.PENDING)
+    //     const payload = {
+    //       signature: signatureHash,
+    //       tokenId: asset.tokenId,
+    //       collection: asset.asset_contract.address,
+    //       strategy: addresses.STRATEGY_STANDARD_SALE,
+    //       currency: addresses.WETH,
+    //       signer: signerAddress,
+    //       isOrderAsk: true,
+    //       nonce: looksRareNonce,
+    //       amount: 1,
+    //       price: parseEther(listingPrice.toString()).toString(),
+    //       startTime: currentTime,
+    //       endTime: asset.expirationTime,
+    //       minPercentageToAsk: 10000 - (200 + asset.creatorPercentage * 10000),
+    //       params: [],
+    //     }
+    //     const res = await createLooksRareOrder(payload)
+    //     if (res) setStatus(ListingStatus.APPROVED)
+    //     return res
+    //   } catch (error) {
+    //     if (error.code === 4001) setStatus(ListingStatus.REJECTED)
+    //     else setStatus(ListingStatus.FAILED)
+    //     return false
+    //   }
 
     case 'X2Y2':
       const orderItem: OfferItem = {
