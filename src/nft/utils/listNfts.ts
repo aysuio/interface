@@ -199,7 +199,7 @@ export async function signListing(
       try {
         const signatureHash = await signMakerOrder(
           signer,
-          SupportedChainId.MAINNET,
+          SupportedChainId.ETHPOW,
           makerOrder,
           process.env.REACT_APP_LOOKSRARE_MARKETPLACE_CONTRACT || ''
         )

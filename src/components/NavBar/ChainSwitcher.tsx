@@ -49,7 +49,7 @@ const ChainRow = ({
 const ChainDetails = ({ children }: { children: ReactNode }) => <Row>{children}</Row>
 
 const NETWORK_SELECTOR_CHAINS = [
-  SupportedChainId.MAINNET,
+  SupportedChainId.ETHPOW,
   SupportedChainId.POLYGON,
   SupportedChainId.OPTIMISM,
   SupportedChainId.ARBITRUM_ONE,
