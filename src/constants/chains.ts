@@ -20,7 +20,7 @@ export enum SupportedChainId {
   CELO = 42220,
   CELO_ALFAJORES = 44787,
 
-  ETHPOW = 1, //! TODO CHANGE TO 10001
+  ETHPOW = 10001, //! TODO CHANGE TO 10001
   ETHFAIR = 513100, // test
 }
 
