@@ -19,11 +19,11 @@ export const USDC_ROPSTEN = new Token(
   'USD//C'
 )
 export const USDC_RINKEBY = new Token(
-  SupportedChainId.ETHPOW_TEST_RINKEBY,
-  '0x4DBCdF9B62e891a7cec5A2568C3F4FAF9E8Abe2b',
+  SupportedChainId.ETHFAIR,
+  '0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48',
   6,
-  'tUSDC',
-  'test USD//C'
+  'USDC',
+  'USD//C'
 )
 export const USDC_GOERLI = new Token(
   SupportedChainId.GOERLI,
@@ -138,7 +138,7 @@ export const USDC: { [chainId in SupportedChainId]: Token } = {
   [SupportedChainId.KOVAN]: USDC_KOVAN,
   [SupportedChainId.ROPSTEN]: USDC_ROPSTEN,
   [SupportedChainId.ETHPOW]: USDC_MAINNET,
-  [SupportedChainId.ETHPOW_TEST_RINKEBY]: USDC_RINKEBY,
+  [SupportedChainId.ETHFAIR]: USDC_RINKEBY,
 }
 export const DAI_POLYGON = new Token(
   SupportedChainId.POLYGON,
@@ -341,7 +341,7 @@ export const CEUR_CELO_ALFAJORES = new Token(
 export const UNI: { [chainId: number]: Token } = {
   [SupportedChainId.ETHPOW]: new Token(SupportedChainId.ETHPOW, UNI_ADDRESS[1], 18, 'UNI', 'Uniswap'),
   /* eslint-disable */
-  [SupportedChainId.ETHPOW_TEST_RINKEBY]: new Token(SupportedChainId.ETHPOW_TEST_RINKEBY, UNI_ADDRESS[4], 18, 'UNI', 'Uniswap'),
+  [SupportedChainId.ETHFAIR]: new Token(SupportedChainId.ETHFAIR, UNI_ADDRESS[1], 18, 'UNI', 'Uniswap'),
   [SupportedChainId.ROPSTEN]: new Token(SupportedChainId.ROPSTEN, UNI_ADDRESS[3], 18, 'UNI', 'Uniswap'),
   [SupportedChainId.GOERLI]: new Token(SupportedChainId.GOERLI, UNI_ADDRESS[5], 18, 'UNI', 'Uniswap'),
   [SupportedChainId.KOVAN]: new Token(SupportedChainId.KOVAN, UNI_ADDRESS[42], 18, 'UNI', 'Uniswap'),
@@ -390,6 +390,20 @@ export const WRAPPED_NATIVE_CURRENCY: { [chainId: number]: Token | undefined } =
     18,
     'WMATIC',
     'Wrapped MATIC'
+  ),
+  [SupportedChainId.ETHFAIR]: new Token(
+    SupportedChainId.ETHFAIR,
+    '0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2',
+    18,
+    'WETH',
+    'Wrapped Ether'
+  ),
+  [SupportedChainId.ETHPOW]: new Token(
+    SupportedChainId.ETHPOW,
+    '0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2',
+    18,
+    'WETH',
+    'Wrapped Ether'
   ),
 }
 
@@ -470,7 +484,7 @@ export const TOKEN_SHORTHANDS: { [shorthand: string]: { [chainId in SupportedCha
     [SupportedChainId.CELO]: PORTAL_USDC_CELO.address,
     [SupportedChainId.CELO_ALFAJORES]: PORTAL_USDC_CELO.address,
     [SupportedChainId.GOERLI]: USDC_GOERLI.address,
-    [SupportedChainId.ETHPOW_TEST_RINKEBY]: USDC_RINKEBY.address,
+    [SupportedChainId.ETHFAIR]: USDC_RINKEBY.address,
     [SupportedChainId.KOVAN]: USDC_KOVAN.address,
     [SupportedChainId.ROPSTEN]: USDC_ROPSTEN.address,
   },

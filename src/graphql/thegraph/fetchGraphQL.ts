@@ -12,7 +12,7 @@ import store, { AppState } from '../../state/index'
 
 const CHAIN_SUBGRAPH_URL: Record<number, string> = {
   [SupportedChainId.ETHPOW]: 'https://api.thegraph.com/subgraphs/name/uniswap/uniswap-v3',
-  [SupportedChainId.ETHPOW_TEST_RINKEBY]: 'https://api.thegraph.com/subgraphs/name/uniswap/uniswap-v3',
+  // [SupportedChainId.ETHFAIR]: 'https://api.thegraph.com/subgraphs/name/uniswap/uniswap-v3',
 
   [SupportedChainId.ARBITRUM_ONE]: 'https://api.thegraph.com/subgraphs/name/ianlapham/arbitrum-minimal',
 

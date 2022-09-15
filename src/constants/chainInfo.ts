@@ -226,14 +226,14 @@ const CHAIN_INFO: ChainInfoMap = {
     nativeCurrency: { name: 'Ether', symbol: 'ETH', decimals: 18 },
     color: colorsDark.chain_1,
   },
-  [SupportedChainId.ETHPOW_TEST_RINKEBY]: {
+  [SupportedChainId.ETHFAIR]: {
     networkType: NetworkType.L1,
     docs: 'https://docs.uniswap.org/',
-    explorer: 'http://iceberg.ethwscan.com/',
+    explorer: 'http://explorer.etherfair.org/',
     infoLink: 'https://info.uniswap.org/#/',
-    label: 'Ethereum test (Iceberg)',
+    label: 'ETH FAIR',
     logoUrl: ethereumLogoUrl,
-    nativeCurrency: { name: 'Rinkeby Ether', symbol: 'rETH', decimals: 18 },
+    nativeCurrency: { name: 'ETHF', symbol: 'ETF', decimals: 18 },
     color: colorsDark.chain_4,
   },
 }

@@ -20,8 +20,8 @@ export enum SupportedChainId {
   CELO = 42220,
   CELO_ALFAJORES = 44787,
 
-  ETHPOW = 10001, //! TODO CHANGE TO 10001
-  ETHPOW_TEST_RINKEBY = 4, // test
+  ETHPOW = 1, //! TODO CHANGE TO 10001
+  ETHFAIR = 513100, // test
 }
 
 export const CHAIN_IDS_TO_NAMES = {
@@ -39,7 +39,7 @@ export const CHAIN_IDS_TO_NAMES = {
   [SupportedChainId.OPTIMISM]: 'optimism',
   [SupportedChainId.OPTIMISTIC_KOVAN]: 'optimistic_kovan',
   [SupportedChainId.ETHPOW]: 'eth_pow',
-  [SupportedChainId.ETHPOW_TEST_RINKEBY]: 'ethpow_test_rinkeby',
+  [SupportedChainId.ETHFAIR]: 'eth_fair',
 }
 
 /**
@@ -78,7 +78,7 @@ export const TESTNET_CHAIN_IDS = [
   SupportedChainId.POLYGON_MUMBAI,
   SupportedChainId.ARBITRUM_RINKEBY,
   SupportedChainId.OPTIMISTIC_KOVAN,
-  SupportedChainId.ETHPOW_TEST_RINKEBY,
+  SupportedChainId.ETHFAIR,
 ] as const
 
 export type SupportedTestnetChainId = typeof TESTNET_CHAIN_IDS[number]
@@ -97,7 +97,7 @@ export const L1_CHAIN_IDS = [
   SupportedChainId.CELO,
   SupportedChainId.CELO_ALFAJORES,
   SupportedChainId.ETHPOW,
-  SupportedChainId.ETHPOW_TEST_RINKEBY,
+  SupportedChainId.ETHFAIR,
 ] as const
 
 export type SupportedL1ChainId = typeof L1_CHAIN_IDS[number]

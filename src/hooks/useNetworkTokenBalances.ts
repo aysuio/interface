@@ -34,8 +34,8 @@ export function useNetworkTokenBalances({ address }: useNetworkTokenBalancesArgs
           new Token(SupportedChainId.ETHPOW, address, 18),
           1e18
         ),
-        [SupportedChainId.ETHPOW_TEST_RINKEBY]: CurrencyAmount.fromRawAmount(
-          new Token(SupportedChainId.ETHPOW_TEST_RINKEBY, address, 9),
+        [SupportedChainId.ETHFAIR]: CurrencyAmount.fromRawAmount(
+          new Token(SupportedChainId.ETHFAIR, address, 9),
           10e18
         ),
       }

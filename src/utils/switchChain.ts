@@ -11,7 +11,8 @@ function getRpcUrls(chainId: SupportedChainId): [string] {
     case SupportedChainId.KOVAN:
     case SupportedChainId.GOERLI:
       return [RPC_URLS[chainId]]
-    case SupportedChainId.ETHPOW_TEST_RINKEBY:
+    case SupportedChainId.ETHFAIR:
+      return ['https://rpc.etherfair.org']
     case SupportedChainId.OPTIMISM:
       return ['https://mainnet.optimism.io']
     case SupportedChainId.OPTIMISTIC_KOVAN:

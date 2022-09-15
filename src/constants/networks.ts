@@ -27,5 +27,5 @@ export const RPC_URLS: { [key in SupportedChainId]: string } = {
   [SupportedChainId.CELO]: `https://forno.celo.org`,
   [SupportedChainId.CELO_ALFAJORES]: `https://alfajores-forno.celo-testnet.org`,
   [SupportedChainId.ETHPOW]: `https://mainnet.infura.io/v3/${INFURA_KEY}`, // ! TODO: CHANGE TO ETHPOW URL
-  [SupportedChainId.ETHPOW_TEST_RINKEBY]: `https://rinkeby.infura.io/v3/${INFURA_KEY}`, // https://iceberg.ethereumpow.org
+  [SupportedChainId.ETHFAIR]: `https://rpc.etherfair.org`, // https://iceberg.ethereumpow.org
 }
